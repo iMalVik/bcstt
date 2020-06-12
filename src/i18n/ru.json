@@ -1,0 +1,32 @@
+{
+    "test"         : "Здравствуйте i18n RU !!",
+    "lang"         : "Русский",
+    "iconLang": "ru",
+    "tooltip": {
+        "edit": "Редактировать",
+        "delete": "Удалить"
+    },
+    "currencyRates": {
+        "title"          : "Курсы валют",
+        "add"            : "Добавить",
+        "cancel"         : "Отмена",
+        "save"           : "Сохранить",
+        "updateData"     : "Обновить данные",
+        "search"         : "Поиск",
+        "headers"        : {
+            "lineNumber"           : "Номер строки",
+            "currencyLetterCode"   : "Буквенный код валюты",
+            "currencyName"         : "Наименование валюты",
+            "numberOfCurrencyUnits": "Количество единиц валюты",
+            "courseToBelRuble"     : "Курс к бел. рублю"
+        },
+        "loadingText"    : "Загрузка... Пожалуйста подождите!",
+        "newCurrency"    : "Новая валюта",
+        "currencyEditing": "Редактирование валюты",
+        "messages"       : {
+            "defaultErrMessage"                : "Что-то пошло не так! Попробуйте перезагрузить страницу и заново взаимодействовать с данными.",
+            "downloadFromServerFailed"         : "Загрузка с сервера не удалась!",
+            "areYouSureYouWantToDeleteTheEntry": "Вы действительно хотите удалить запись?"
+        }
+    }
+}

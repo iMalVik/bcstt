@@ -1,0 +1,32 @@
+{
+    "test"         : "hello i18n EN!!",
+    "lang"         : "English",
+    "iconLang"   : "gb",
+    "tooltip": {
+        "edit": "Edit",
+        "delete": "Delete"
+    },
+    "currencyRates": {
+        "title"          : "Currency rates",
+        "add"            : "Add",
+        "cancel"         : "Cancel",
+        "save"           : "Save",
+        "updateData"     : "Update data",
+        "search"         : "Search",
+        "headers"        : {
+            "lineNumber"           : "Line number",
+            "currencyLetterCode"   : "Currency letter code",
+            "currencyName"         : "Currency Name",
+            "numberOfCurrencyUnits": "Number of currency units",
+            "courseToBelRuble"     : "The Course to the belarusian ruble"
+        },
+        "loadingText"    : "Loading... Please wait",
+        "newCurrency"    : "New Currency",
+        "currencyEditing": "Currency Editing",
+        "messages"       : {
+            "defaultErrMessage"                : "Something went wrong! Try reloading the page and interacting with the data again.",
+            "downloadFromServerFailed"         : "Download from server failed!",
+            "areYouSureYouWantToDeleteTheEntry": "Are you sure you want to delete the entry?"
+        }
+    }
+}
