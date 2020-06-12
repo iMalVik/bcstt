@@ -1,7 +1,7 @@
 <template lang="pug">
-    .CurrencyRates
+    .currency-rates
         v-card
-            v-card-title
+            v-card-title.pt-2.pb-2
                 h2  {{$t('currencyRates.title')}}
                 v-spacer
                 btn-menu-locales
@@ -10,11 +10,12 @@
 
 <script>
     import BtnMenuLocales from '@/components/BtnMenuLocales'
-    import TableRates          from '@/components/TableRates'
+    import TableRates     from '@/components/TableRates'
+    import BtnMenuTheme   from '../components/BtnMenuTheme'
 
     export default {
         name: 'CurrencyRates',
-        components: { TableRates, BtnMenuLocales },
+        components: { BtnMenuTheme, TableRates, BtnMenuLocales },
         data: () => ({
         }),
         computed: {
@@ -33,7 +34,7 @@
 </script>
 
 <style lang="scss">
-    .CurrencyRates {
+    .currency-rates {
         padding: 8px;
     }
 </style>

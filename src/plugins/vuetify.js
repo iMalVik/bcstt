@@ -1,9 +1,6 @@
 import Vue        from 'vue'
 import Vuetify    from 'vuetify/lib'
 import VueI18n    from 'vue-i18n'
-// import { en, ru } from './i18n/vuetify'
-// import ru  from '../i18n/ru'
-// import { ru, en }  from 'vuetify/es5/locale/'
 import { en, ru } from '../i18n/vuetify/'
 
 Vue.use(Vuetify)

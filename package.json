@@ -1,6 +1,8 @@
 {
   "name": "bcstt",
   "version": "0.1.0",
+  "description": "Displays current exchange rates",
+  "author": "Viktor Malyshkin <imalvik@yandex.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

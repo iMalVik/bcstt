@@ -1,9 +1,9 @@
 <template lang="pug">
-    v-data-table.elevation-1(:headers='headers', :items='rates', sort-by='ID' multi-sort :search="search" :loading='isLoading' :loading-text="this.$t('currencyRates.loadingText')")
+    v-data-table.elevation-17(:headers='headers', :items='rates', sort-by='ID' multi-sort :search="search" :loading='isLoading' :loading-text="this.$t('currencyRates.loadingText')")
         template(v-slot:top='')
-            v-toolbar(flat='', color='white')
+            v-toolbar(flat)
                 div
-                    hr.mb-4(color='lightgrey')
+                    hr.mb-2.mt-2(color='lightgrey')
                     v-dialog(v-model='isDialog', max-width='500px')
                         template(v-slot:activator='{ on, attrs }')
                             v-btn.mb-2.mr-4( v-bind='attrs', v-on='on' :disabled="isLoading")
@@ -47,13 +47,18 @@
                         | mdi-delete
                 span {{$t('tooltip.delete')}}
         template(v-slot:no-data)
-            v-btn(color='primary', @click='initialize') {{$t('currencyRates.updateData')}}
+            v-btn(@click='initialize') {{$t('currencyRates.updateData')}}
 </template>
 
 <script>
     export default {
         name: 'Table',
-        props: { headers: { type: Array, required: true } },
+        props: {
+            headers: {
+                type: Array,
+                required: true,
+            },
+        },
         data: () => ({
             isDialog: false,
             keyRates: 'rates',
@@ -80,7 +85,7 @@
         }),
         computed: {
             formTitle () {
-                return this.editedIndex === -1 ? this.$t('currencyRates.newCurrency') : this.$t('currencyRates.currencyEditing')
+                return this.$t('currencyRates.' + (this.editedIndex === -1 ? 'newCurrency' : 'currencyEditing'))
             },
         },
 
@@ -216,5 +221,9 @@
         to {
             transform: rotate(360deg);
         }
+    }
+
+    .theme--dark.v-toolbar.v-sheet {
+        background-color: #1E1E1E;
     }
 </style>
