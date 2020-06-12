@@ -1,9 +1,9 @@
 {
     "test"         : "hello i18n EN!!",
     "lang"         : "English",
-    "iconLang"   : "gb",
-    "tooltip": {
-        "edit": "Edit",
+    "iconLang"     : "gb",
+    "tooltip"      : {
+        "edit"  : "Edit",
         "delete": "Delete"
     },
     "currencyRates": {
@@ -28,5 +28,10 @@
             "downloadFromServerFailed"         : "Download from server failed!",
             "areYouSureYouWantToDeleteTheEntry": "Are you sure you want to delete the entry?"
         }
+    },
+    "theme"        : {
+        "theme": "Theme",
+        "light": "Light",
+        "dark" : "Dark"
     }
 }

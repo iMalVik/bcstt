@@ -1,9 +1,9 @@
 {
     "test"         : "Здравствуйте i18n RU !!",
     "lang"         : "Русский",
-    "iconLang": "ru",
-    "tooltip": {
-        "edit": "Редактировать",
+    "iconLang"     : "ru",
+    "tooltip"      : {
+        "edit"  : "Редактировать",
         "delete": "Удалить"
     },
     "currencyRates": {
@@ -28,5 +28,10 @@
             "downloadFromServerFailed"         : "Загрузка с сервера не удалась!",
             "areYouSureYouWantToDeleteTheEntry": "Вы действительно хотите удалить запись?"
         }
+    },
+    "theme"        : {
+        "theme": "Тема",
+        "light": "Светлая",
+        "dark" : "Тёмная"
     }
 }

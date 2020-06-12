@@ -4,6 +4,7 @@
             v-card-title.pt-2.pb-2
                 h2  {{$t('currencyRates.title')}}
                 v-spacer
+                btn-theme
                 btn-menu-locales
             table-rates(:headers='headers')
 </template>
@@ -11,11 +12,11 @@
 <script>
     import BtnMenuLocales from '@/components/BtnMenuLocales'
     import TableRates     from '@/components/TableRates'
-    import BtnMenuTheme   from '../components/BtnMenuTheme'
+    import BtnTheme       from '@/components/BtnTheme'
 
     export default {
         name: 'CurrencyRates',
-        components: { BtnMenuTheme, TableRates, BtnMenuLocales },
+        components: { BtnTheme, TableRates, BtnMenuLocales },
         data: () => ({
         }),
         computed: {
