@@ -1,6 +1,6 @@
 # bcstt
-##Displays current exchange rates
-###Technologies project
+## Displays current exchange rates
+### Technologies project
 *** 
 Vue, Vuetify, Pug/Jade, SCSS, Webpack, i18n, SessionStorage, Eslint, ENV, Babel, Webpack
 ***
@@ -14,8 +14,8 @@ npm install
 npm run serve
 ```
 ***
-##Task
-####Создать SPA приложение согласно макету, в котором будет реализовано:
+## Task
+#### Создать SPA приложение согласно макету, в котором будет реализовано:
 ➢Таблица, в которой будет указано:
 
     • номер строки;
