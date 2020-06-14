@@ -28,7 +28,6 @@ module.exports = {
         'no-trailing-spaces': ['warn', { skipBlankLines: true }],
         'no-multi-spaces': 'off',
         'space-in-parens': ['error', 'never'],
-        // 'comma-dangle': [ 'error', 'always-multiline' ],
         indent: [
             'warn',
             4,
@@ -36,16 +35,27 @@ module.exports = {
                 MemberExpression: 1,
             },
         ],
-        
+        'vue/html-indent': [
+            'warn',
+            4,
+            {
+                baseIndent: 1,
+            },
+        ],
         'vue/script-indent': [
             'warn',
             4,
             {
                 baseIndent: 1,
-                switchCase: 0,
-                ignores: [],
             },
         ],
+        "vue/max-attributes-per-line": ["error", {
+            "singleline": 5,
+            "multiline": {
+                "max": 1,
+                "allowFirstLine": true
+            }
+        }]
     },
     
     overrides: [
