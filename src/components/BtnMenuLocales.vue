@@ -20,6 +20,7 @@
         }),
         methods: {
             changeLocale (locale) {
+                this.$vuetify.lang.current = locale.lang
                 this.$i18n.locale = locale.lang
                 this.iconLang = locale.icon
             },
