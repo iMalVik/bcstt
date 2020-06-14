@@ -2,12 +2,12 @@
     .menu-locales
         v-menu(bottom, origin='center center', transition='scale-transition')
             template(v-slot:activator='{ on, attrs }')
-                v-btn(text v-bind='attrs', v-on='on')
-                    country-flag.ma-0.pa-0(:country="$t('iconLang')" left )
-                    .mr-2 {{$t('lang')}}
+                v-btn(text block v-bind='attrs', v-on='on')
+                    country-flag(:country="$t('iconLang')" left )
+                    .mr-2.d-none.d-sm-block {{$t('lang')}}
             v-list()
                 v-list-item( v-for='(item, i) in locales', :key='i', @click='changeLocale(item)')
-                    country-flag.width-flag.ma-0.pa-0(:country='item.icon' left)
+                    country-flag.width-flag(:country='item.icon' left)
                     v-list-item-title.styleLocaleName {{ item.name.toUpperCase() }}
 </template>
 
@@ -30,7 +30,7 @@
 
 <style scoped lang="scss">
     .v-menu__content .v-list .v-list-item .width-flag {
-            width: 90px !important;
+            width: 90px;
     }
     .styleLocaleName {
         font-size: 0.875rem;

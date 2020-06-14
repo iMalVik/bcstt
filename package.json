@@ -2,7 +2,11 @@
   "name": "bcstt",
   "version": "0.1.0",
   "description": "Displays current exchange rates",
-  "author": "Viktor Malyshkin <imalvik@yandex.com>",
+  "author": {
+    "name": "Viktor Malyshkin",
+    "email": "imalvik@yandex.com",
+    "url": "https://github.com/iMalVik"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

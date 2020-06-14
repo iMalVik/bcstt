@@ -1,5 +1,10 @@
 {
     "test"         : "Здравствуйте i18n RU !!",
+    "appName"      : "БТСТЗ",
+    "appTaskDescription": "Описание задачи приложения",
+    "appSources": "Исходники приложения",
+    "developer": "Рзработчик",
+    "author": "Виктор Малышкин",
     "lang"         : "Русский",
     "iconLang"     : "ru",
     "tooltip"      : {

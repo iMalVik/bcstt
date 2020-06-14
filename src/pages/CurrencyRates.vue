@@ -3,22 +3,16 @@
         v-card
             v-card-title.pt-2.pb-2
                 h2  {{$t('currencyRates.title')}}
-                v-spacer
-                btn-theme
-                btn-menu-locales
             table-rates(:headers='headers')
 </template>
 
 <script>
-    import BtnMenuLocales from '@/components/BtnMenuLocales'
-    import TableRates     from '@/components/TableRates'
-    import BtnTheme       from '@/components/BtnTheme'
+    import TableRates from '@/components/TableRates'
 
     export default {
         name: 'CurrencyRates',
-        components: { BtnTheme, TableRates, BtnMenuLocales },
-        data: () => ({
-        }),
+        components: { TableRates },
+        data: () => ({}),
         computed: {
             headers () {
                 return [
@@ -36,6 +30,6 @@
 
 <style lang="scss">
     .currency-rates {
-        padding: 8px;
+        padding: 4px;
     }
 </style>

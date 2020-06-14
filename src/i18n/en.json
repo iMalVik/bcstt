@@ -1,5 +1,10 @@
 {
     "test"         : "hello i18n EN!!",
+    "appName"      : "BCSTT",
+    "appTaskDescription": "Application task description",
+    "appSources": "Application sources",
+    "developer": "Developer",
+    "author": "Viktor Malyshkin",
     "lang"         : "English",
     "iconLang"     : "gb",
     "tooltip"      : {

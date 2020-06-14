@@ -2,9 +2,9 @@
     .btn-theme
         v-tooltip(bottom)
             template(v-slot:activator="{ on, attrs }")
-                v-btn(text @click='changeTheme' v-bind="attrs" v-on="on")
-                    .styleThemeIcon.mr-4(:style='themeNow.style')
-                    .mr-2 {{ themeNow.name }}
+                v-btn( block text @click='changeTheme' v-bind="attrs" v-on="on")
+                    .styleThemeIcon(:style='themeNow.style')
+                    .mr-2.d-none.d-sm-block  {{ themeNow.name }}
             span {{$t('theme.theme')}}
 </template>
 
@@ -37,7 +37,8 @@
     .styleThemeIcon {
         min-width: 30px;
         min-height: 20px;
-        border: rgba(0, 0, 0, 0.12) solid 1px;
-        box-shadow: black;
+        margin-right: 15px;
+        margin-left: 15px;
+        box-shadow: 0 0 2px rgba(0,0,0);
     }
 </style>

@@ -1,49 +1,50 @@
 <template lang="pug">
-    v-data-table.elevation-17(:headers='headers', :items='rates', sort-by='ID' multi-sort :search="search" :loading='isLoading' :loading-text="this.$t('currencyRates.loadingText')")
+    v-data-table.elevation-17(:headers='headers', :items='rates', sort-by='ID' multi-sort :search="search" :loading='isLoading' :loading-text="loadingText")
         template(v-slot:top='')
             v-toolbar(flat)
-                div
-                    hr.mb-2.mt-2(color='lightgrey')
-                    v-dialog(v-model='isDialog', max-width='500px')
-                        template(v-slot:activator='{ on, attrs }')
-                            v-btn.mb-2.mr-4( v-bind='attrs', v-on='on' :disabled="isLoading")
-                                v-icon(left color='grey' ) mdi-plus
-                                | {{$t('currencyRates.add')}}
-                        v-card
-                            v-card-title
-                                span.headline {{ formTitle }}
-                            v-card-text
-                                v-container
-                                    v-row
-                                        v-col(cols='12')
-                                            v-text-field(v-model='editedItem.Cur_Abbreviation', :label="$t('currencyRates.headers.currencyLetterCode')" outlined rounded clearable dense)
-                                        v-col(cols='12')
-                                            v-text-field(v-model='editedItem.Cur_Name', :label="$t('currencyRates.headers.currencyName')" outlined rounded clearable dense)
-                                        v-col(cols='12')
-                                            v-text-field(v-model='editedItem.Cur_Scale', :label="$t('currencyRates.headers.numberOfCurrencyUnits')" outlined rounded clearable dense)
-                                        v-col(cols='12')
-                                            v-text-field(v-model='editedItem.Cur_OfficialRate', :label="$t('currencyRates.headers.courseToBelRuble')" outlined rounded clearable dense)
-                            v-card-actions
-                                v-spacer
-                                v-btn(rounded @click='saveItem') {{$t('currencyRates.save')}}
-                                v-btn(rounded @click='close') {{$t('currencyRates.cancel')}}
-                    v-btn.mb-2( @click='initialize' :loading="isLoading" :disabled="isLoading")
-                        v-icon(left color='grey' ) mdi-update
-                        | {{$t('currencyRates.updateData')}}
-                        template(v-slot:loader)
-                            span.custom-loader
-                                v-icon(light) mdi-cached
+                .d-flex.flex-column
+                    hr.mb-2.mt-2.mr-2.mr-sm-4(color='lightgrey')
+                    .d-flex
+                        v-dialog(v-model='isDialog', max-width='500px')
+                            template(v-slot:activator='{ on, attrs }')
+                                v-btn.mr-2.mr-sm-4( v-bind='attrs', v-on='on' :disabled="isLoading")
+                                    v-icon.ma-0(left color='grey') mdi-plus
+                                    .d-none.d-sm-block.ml-2 {{$t('currencyRates.add')}}
+                            v-card
+                                v-card-title
+                                    span.headline {{ formTitle }}
+                                v-card-text
+                                    v-container
+                                        v-row
+                                            v-col(cols='12')
+                                                v-text-field(v-model='editedItem.Cur_Abbreviation', :label="$t('currencyRates.headers.currencyLetterCode')" outlined rounded clearable dense)
+                                            v-col(cols='12')
+                                                v-text-field(v-model='editedItem.Cur_Name', :label="$t('currencyRates.headers.currencyName')" outlined rounded clearable dense)
+                                            v-col(cols='12')
+                                                v-text-field(v-model='editedItem.Cur_Scale', :label="$t('currencyRates.headers.numberOfCurrencyUnits')" outlined rounded clearable dense)
+                                            v-col(cols='12')
+                                                v-text-field(v-model='editedItem.Cur_OfficialRate', :label="$t('currencyRates.headers.courseToBelRuble')" outlined rounded clearable dense)
+                                v-card-actions
+                                    v-spacer
+                                    v-btn(rounded @click='saveItem') {{$t('currencyRates.save')}}
+                                    v-btn(rounded @click='close') {{$t('currencyRates.cancel')}}
+                        v-btn.mr-2.mr-sm-4( @click='initialize' :loading="isLoadingBtnUpdateData" :disabled="isLoadingBtnUpdateData")
+                            v-icon.ma-0(left color='grey') mdi-update
+                            .d-none.d-sm-block.ml-2 {{$t('currencyRates.updateData')}}
+                            template(v-slot:loader)
+                                span.custom-loader
+                                    v-icon(light) mdi-cached
                 v-spacer
-                v-text-field(v-model='search', append-icon='mdi-magnify', :label="$t('currencyRates.search')",  hide-details)
+                v-text-field.mt-auto(v-model='search', append-icon='mdi-magnify', :label="$t('currencyRates.search')",  hide-details)
         template(v-slot:item.actions='{ item }')
             v-tooltip(bottom)
                 template(v-slot:activator="{ on, attrs }")
-                    v-icon.mr-2(small, @click='editItem(item, item.ID)' v-bind="attrs" v-on="on")
+                    v-icon.mr-2(small, @click='editItem(item, item.ID)' v-bind="attrs" v-on="on" :disabled='isLoading')
                         | mdi-pencil
                 span {{$t('tooltip.edit')}}
             v-tooltip(bottom)
                 template(v-slot:activator="{ on, attrs }")
-                    v-icon(small, @click='deleteItem(item)' v-bind="attrs" v-on="on")
+                    v-icon(small, @click='deleteItem(item)' v-bind="attrs" v-on="on" :disabled='isLoading')
                         | mdi-delete
                 span {{$t('tooltip.delete')}}
         template(v-slot:no-data)
@@ -82,10 +83,17 @@
                 Cur_Scale: '',
                 Cur_OfficialRate: '',
             },
+            loadingErrorText: '',
         }),
         computed: {
             formTitle () {
                 return this.$t('currencyRates.' + (this.editedIndex === -1 ? 'newCurrency' : 'currencyEditing'))
+            },
+            loadingText () {
+                return this.loadingErrorText || this.$t('currencyRates.loadingText')
+            },
+            isLoadingBtnUpdateData () {
+                return this.loadingErrorText ? !this.isLoading : this.isLoading
             },
         },
 
@@ -123,6 +131,8 @@
         methods: {
             initialize () {
                 this.isLoading = true
+                this.rates = []
+                this.loadingErrorText = ''
                 setTimeout(() => {
                     fetch(process.env.VUE_APP_RESOURCE_RATES).then(response => response.json()).catch(() => {
                         alert(this.$t('currencyRates.messages.downloadFromServerFailed'))
@@ -201,8 +211,12 @@
             },
 
             defaultErrorMessage () {
-                alert(this.$t('currencyRates.messages.defaultErrMessage'))
+                const defaultErrMessage = this.$t('currencyRates.messages.defaultErrMessage')
+                alert(defaultErrMessage)
+                this.loadingErrorText = defaultErrMessage
                 sessionStorage.clear()
+                this.rates = []
+                this.close()
             },
         },
     }
