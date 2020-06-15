@@ -31,7 +31,7 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-app-bar app dense clipped-left :src="srcAppBabBackground">
+        <v-app-bar app dense clipped-left :src="srcAppBarBackground">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
             <v-toolbar-title>{{ $t('appName') }}</v-toolbar-title>
             <v-spacer />
@@ -67,7 +67,7 @@
             authorIcon: process.env.VUE_APP_AUTHOR_ICON || process.env.VUE_APP_AUTHOR_ICON_DEFAULT,
         }),
         computed: {
-            srcAppBabBackground () { return this.$vuetify.theme.dark ? process.env.VUE_APP_BAR_BACKGROUND : '' },
+            srcAppBarBackground () { return this.$vuetify.theme.dark ? process.env.VUE_APP_BAR_BACKGROUND : '' },
         },
     }
 </script>
