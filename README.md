@@ -1,9 +1,20 @@
-# bcstt
+# ![BCSTT](./public/favicon.ico) BCSTT
+
 ## Displays current exchange rates
 ### Technologies project
 *** 
-Vue, Vuetify, Pug/Jade, SCSS, Webpack, i18n, SessionStorage, Eslint, ENV, Babel, Webpack
+Vue, Vuetify, Pug/Jade, SCSS, Webpack, i18n, Themes, SessionStorage, Eslint, ENV, Babel, Webpack, Open Graph
 ***
+
+### Adaptability tested in browsers
+***
+Safary, Firefox, Google Chrome, Yandex
+***
+
+### [Demo App](<https://imalvik.github.io/bcstt/>)
+***
+***
+
 ### Project setup
 ```
 npm install
@@ -13,6 +24,23 @@ npm install
 ```
 npm run serve
 ```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Run your i18n report
+```
+i18n:report
+```
+
+***
 ***
 ## Task
 #### Создать SPA приложение согласно макету, в котором будет реализовано:
@@ -41,7 +69,8 @@ npm run serve
 
 PS: Дизайна можно не придерживаться
 
-➢[Ссылка на макет](<https://www.figma.com/file/6V3akQSZUS6TdHjwVHXMPZ/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0%3A1>) или смотрите ниже или внутри папки 3 изображения.
+➢[Ссылка на макет](<https://www.figma.com/file/6V3akQSZUS6TdHjwVHXMPZ/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7
+%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0%3A1>) или смотрите ниже или внутри папки ./task.
 ***
 ![screenshot of sample](./task/1.png)
 ***
@@ -50,4 +79,3 @@ PS: Дизайна можно не придерживаться
 ![screenshot of sample](./task/3.png)
 
 ***
-
