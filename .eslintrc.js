@@ -49,13 +49,13 @@ module.exports = {
                 baseIndent: 1,
             },
         ],
-        "vue/max-attributes-per-line": ["error", {
-            "singleline": 5,
-            "multiline": {
-                "max": 1,
-                "allowFirstLine": true
-            }
-        }]
+        'vue/max-attributes-per-line': ['error', {
+            singleline: 5,
+            multiline: {
+                max: 1,
+                allowFirstLine: true,
+            },
+        }],
     },
     
     overrides: [
